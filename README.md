@@ -1,4 +1,4 @@
-# asp dotnet.core docker base
+# ASP.NET Core sandbox by docker
 
 ## start
 
@@ -52,3 +52,29 @@ EOF
 ### deploy
 
 `docker exec asp-net dotnet NetCoreDocker.dll`
+
+### reset
+
+`git clean -fdx`
+
+## start empty vs web project
+
+### create project
+
+`docker exec dotnet-build dotnet new webapp`
+
+### open visual studio
+
+`open app/app.csproj`
+
+### build
+
+`docker exec dotnet-build dotnet publish -c Release -o out`
+
+### run
+
+`docker exec asp-net dotnet app.dll`
+
+### reset
+
+`git clean -fdx`
