@@ -67,6 +67,15 @@ EOF
 
 `open app/app.csproj`
 
+### run local
+
+* [install latest dotnet-core 2.2](https://dotnet.microsoft.com/download/dotnet-core/2.2)
+* permmit local https
+
+        `dotnet dev-certs https --trust`
+
+* run by visual studio
+
 ### build
 
 `docker exec dotnet-build dotnet publish -c Release -o out`
