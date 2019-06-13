@@ -9,6 +9,7 @@ services:
       TZ: Asia/Tokyo
     volumes:
       - ./app:/app
+    working_dir: /app
     tty: true
   asp-net:
     image: mcr.microsoft.com/dotnet/core/aspnet:2.2
@@ -18,6 +19,7 @@ services:
       TZ: Asia/Tokyo
     volumes:
       - ./app/out:/app
+    working_dir: /app
     tty: true
     ports:
       - 80:80
