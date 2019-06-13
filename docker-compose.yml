@@ -1,0 +1,23 @@
+version: '3.5'
+
+services:
+  dotnet-build:
+    image: mcr.microsoft.com/dotnet/core/sdk:2.2
+    container_name: dotnet-build
+    hostname: dotnet-build
+    environment:
+      TZ: Asia/Tokyo
+    volumes:
+      - ./app:/app
+    tty: true
+  asp-net:
+    image: mcr.microsoft.com/dotnet/core/aspnet:2.2
+    container_name: asp-net
+    hostname: asp-net
+    environment:
+      TZ: Asia/Tokyo
+    volumes:
+      - ./app/out:/app
+    tty: true
+    ports:
+      - 80:80
