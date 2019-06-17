@@ -1,3 +1,4 @@
 app/out/
 bin/
 obj/
+.vs/
